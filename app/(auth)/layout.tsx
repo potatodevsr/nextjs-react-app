@@ -14,7 +14,6 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-
   return (
     <div>
       {navLinks.map((link) => {
