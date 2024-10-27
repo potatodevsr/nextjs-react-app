@@ -1,3 +1,5 @@
+import Card from "@/src/components/card";
+
 export default function Users() {
-  return <h1>Users</h1>;
+  return <Card>Users</Card>;
 }

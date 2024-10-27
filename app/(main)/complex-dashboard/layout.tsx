@@ -1,18 +1,24 @@
-import UserAnalytics from "@/components/UserAnalytics";
-import RevenueMetrics from "@/components/RevenueMetrics";
-import Notifications from "@/components/Notification";
-
 export default function DashboardLayout({
   children,
+  users,
+  revenue,
+  notifications,
 }: {
   children: React.ReactNode;
+  users: React.ReactNode;
+  revenue: React.ReactNode;
+  notifications: React.ReactNode;
 }) {
   return (
-    <>
-      <div>{children}</div> {/* Content from page.tsx*/}
-      <UserAnalytics /> {/* Component from user-analytics*/}
-      <RevenueMetrics /> {/* Component from revenueMetrics*/}
-      <Notifications /> {/* Component from  notification*/}
-    </>
+    <div>
+      <div>{children}</div>
+      <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div>{users}</div>
+          <div>{revenue}</div>
+        </div>
+        <div style={{ display: "flex", flex: 1 }}>{notifications}</div>
+      </div>
+    </div>
   );
 }
